@@ -23,13 +23,13 @@ requirements:
   host:
     - python
     - cython
-    - boost-cpp 1.67.0
+    - boost-cpp {{ boost_version }}
     - eigen
-    - cgal 4.12
+    - cgal-cpp 4.14
   run:
     - python
-    - boost-cpp 1.67.0
-    - cgal 4.12
+    - boost-cpp {{ boost_version }}
+    - cgal-cpp 4.14
 
 test:
   imports:
