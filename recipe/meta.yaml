@@ -1,4 +1,4 @@
-{% set version = "2.4.0" %}
+{% set version = "2.3.0" %}
 {% set url = "https://gforge.inria.fr/frs/download.php/file/37696/2018-09-04-14-25-00_GUDHI_2.3.0.tar.gz" %}
 {% set sha256 = "7db6cf3324ac36f82fdda580357329e9f38b79abb7c21db6cc7ae1215668c8f2" %}
 
