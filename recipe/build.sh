@@ -1,5 +1,18 @@
 #!/bin/sh
 
+# Construct user version from devel version
+mkdir build && cd build
+
+cmake \
+  -DUSER_VERSION_DIR=version
+  ..
+
+make user_version
+
+cd version
+
+# Build and install user version
+
 mkdir build && cd build
 
 cmake \

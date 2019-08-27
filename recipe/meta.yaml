@@ -1,17 +1,17 @@
 {% set version = "2.3.0" %}
-{% set url = "https://gforge.inria.fr/frs/download.php/file/37696/2018-09-04-14-25-00_GUDHI_2.3.0.tar.gz" %}
-{% set sha256 = "7db6cf3324ac36f82fdda580357329e9f38b79abb7c21db6cc7ae1215668c8f2" %}
+{% set commit = "fa19484e31dbe0b63d50475f15e654a5e1a0c4e1" %}
+{% set sha256 = "85e9edbddd85cc8bd579220d586d5e27b7b963b83278980663a3fe1fff5609c9" %}
 
 package:
   name: gudhi
   version: {{ version }}
 
 source:
-  url: {{ url }}
+  url: https://github.com/GUDHI/gudhi-devel/archive/{{ commit }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   # C++11 only supports vc14
   skip: true  # [win and py2k]
 

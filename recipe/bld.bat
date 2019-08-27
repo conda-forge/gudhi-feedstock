@@ -1,6 +1,23 @@
+set CMAKE_CONFIG="Release"
+
+:: Construct user version from devel version
+
 mkdir build && cd build
 
-set CMAKE_CONFIG="Release"
+cmake -LAH -G"NMake Makefiles" ^
+  -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
+  -DDUSER_VERSION_DIR=version ^
+  ..
+if errorlevel 1 exit 1
+
+cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
+if errorlevel 1 exit 1
+
+cd version
+
+:: Build and install user version
+
+mkdir build && cd build
 
 cmake -LAH -G"NMake Makefiles" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
