@@ -6,7 +6,7 @@ mkdir build && cd build
 
 cmake -LAH -G"NMake Makefiles" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
-  -DDUSER_VERSION_DIR=version ^
+  -DUSER_VERSION_DIR=version ^
   ..
 if errorlevel 1 exit 1
 

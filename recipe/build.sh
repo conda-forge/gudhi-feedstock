@@ -4,7 +4,7 @@
 mkdir build && cd build
 
 cmake \
-  -DUSER_VERSION_DIR=version
+  -DUSER_VERSION_DIR=version \
   ..
 
 make user_version
