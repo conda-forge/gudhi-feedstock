@@ -1,5 +1,5 @@
-{% set version = "2.3.0" %}
-{% set commit = "fa19484e31dbe0b63d50475f15e654a5e1a0c4e1" %}
+{% set version = "2.3.1" %}
+{% set commit = "51a38f313f633e1c593d77319f3752a010da782c" %}
 {% set sha256 = "85e9edbddd85cc8bd579220d586d5e27b7b963b83278980663a3fe1fff5609c9" %}
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/GUDHI/gudhi-devel/archive/{{ commit }}.tar.gz
+  url: https://github.com/VincentRouvreau/gudhi-devel/archive/{{ commit }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 0
   # C++11 only supports vc14
   skip: true  # [win and py2k]
 
