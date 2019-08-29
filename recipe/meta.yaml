@@ -1,6 +1,6 @@
 {% set version = "2.3.1" %}
 {% set commit = "51a38f313f633e1c593d77319f3752a010da782c" %}
-{% set sha256 = "85e9edbddd85cc8bd579220d586d5e27b7b963b83278980663a3fe1fff5609c9" %}
+{% set sha256 = "8292b0067bc9d5746d1280580c4dc6d8b4922bc5f81ed7e3c09237ea71a8a7b2" %}
 
 package:
   name: gudhi
