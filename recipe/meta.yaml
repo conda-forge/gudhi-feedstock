@@ -23,6 +23,7 @@ requirements:
   host:
     - python
     - numpy
+    - setuptools
     - cython
     - boost-cpp {{ boost_version }}
     - eigen
