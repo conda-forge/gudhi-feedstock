@@ -35,7 +35,7 @@ if errorlevel 1 exit 1
 cmake -DWITH_GUDHI_PYTHON=ON .
 if errorlevel 1 exit 1
 
-cd cython
+cd python
 python setup.py install
 if errorlevel 1 exit 1
 
