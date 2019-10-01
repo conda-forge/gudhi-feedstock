@@ -1,6 +1,6 @@
-{% set version = "2.3.0" %}
-{% set commit = "fa19484e31dbe0b63d50475f15e654a5e1a0c4e1" %}
-{% set sha256 = "85e9edbddd85cc8bd579220d586d5e27b7b963b83278980663a3fe1fff5609c9" %}
+{% set version = "3.0.0" %}
+{% set commit = "de8e4aba94a0d5ecf933ad3ee1c05ccb866288b0" %}
+{% set sha256 = "0f8e081b1400b1f04cf0228d8915bb3e9cc5e913ececb7206e258cbfbda89a2f" %}
 
 package:
   name: gudhi
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 0
   # C++11 only supports vc14
   skip: true  # [win and py2k]
 
@@ -22,12 +22,14 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
+    - numpy
     - cython
     - boost-cpp {{ boost_version }}
     - eigen
     - cgal-cpp 4.14
   run:
     - python
+    - numpy
     - boost-cpp {{ boost_version }}
     - cgal-cpp 4.14
 
@@ -40,7 +42,7 @@ test:
     - python -c "import gudhi; diag1 = [[2.7, 3.7], [9.6, 14.0], [34.2, 34.974], [3.0, float('Inf')]]; diag2 = [[2.8, 4.45], [9.5, 14.1], [3.2, float('Inf')]]; assert gudhi.bottleneck_distance(diag1, diag2) == 0.75"
 about:
   home: http://gudhi.gforge.inria.fr/
-  license: GPL3
+  license: MIT/GPL3
   license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
   description: |
