@@ -1,13 +1,13 @@
-{% set version = "2.3.1" %}
-{% set commit = "51a38f313f633e1c593d77319f3752a010da782c" %}
-{% set sha256 = "8292b0067bc9d5746d1280580c4dc6d8b4922bc5f81ed7e3c09237ea71a8a7b2" %}
+{% set version = "3.0.0" %}
+{% set commit = "de8e4aba94a0d5ecf933ad3ee1c05ccb866288b0" %}
+{% set sha256 = "0f8e081b1400b1f04cf0228d8915bb3e9cc5e913ececb7206e258cbfbda89a2f" %}
 
 package:
   name: gudhi
   version: {{ version }}
 
 source:
-  url: https://github.com/VincentRouvreau/gudhi-devel/archive/{{ commit }}.tar.gz
+  url: https://github.com/GUDHI/gudhi-devel/archive/{{ commit }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -42,7 +42,7 @@ test:
     - python -c "import gudhi; diag1 = [[2.7, 3.7], [9.6, 14.0], [34.2, 34.974], [3.0, float('Inf')]]; diag2 = [[2.8, 4.45], [9.5, 14.1], [3.2, float('Inf')]]; assert gudhi.bottleneck_distance(diag1, diag2) == 0.75"
 about:
   home: http://gudhi.gforge.inria.fr/
-  license: GPL3
+  license: MIT/GPL3
   license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
   description: |
