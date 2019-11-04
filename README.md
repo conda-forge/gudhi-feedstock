@@ -55,6 +55,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_boost_version1.68.0python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=linux&configuration=linux_boost_version1.68.0python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_boost_version1.69.0python2.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
@@ -73,6 +80,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=linux&configuration=linux_boost_version1.69.0python3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_boost_version1.69.0python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=linux&configuration=linux_boost_version1.69.0python3.8" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -97,6 +111,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>osx_boost_version1.68.0python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=osx&configuration=osx_boost_version1.68.0python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>osx_boost_version1.69.0python2.7</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
@@ -118,6 +139,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>osx_boost_version1.69.0python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=osx&configuration=osx_boost_version1.69.0python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
@@ -132,6 +160,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=win&configuration=win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.8" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.6</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
@@ -143,6 +178,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=win&configuration=win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.8</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2979&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gudhi-feedstock?branchName=master&jobName=win&configuration=win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.8" alt="variant">
                 </a>
               </td>
             </tr>
