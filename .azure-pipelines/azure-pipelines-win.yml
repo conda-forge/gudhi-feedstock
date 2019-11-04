@@ -18,12 +18,20 @@ jobs:
         CONFIG: win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.7
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
+      win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.8:
+        CONFIG: win_boost_version1.68.0c_compilervs2015cxx_compilervs2015python3.8
+        CONDA_BLD_PATH: D:\\bld\\
+        UPLOAD_PACKAGES: True
       win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.6:
         CONFIG: win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.6
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
       win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.7:
         CONFIG: win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.7
+        CONDA_BLD_PATH: D:\\bld\\
+        UPLOAD_PACKAGES: True
+      win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.8:
+        CONFIG: win_boost_version1.69.0c_compilervs2015cxx_compilervs2015python3.8
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
   steps:
@@ -109,6 +117,7 @@ jobs:
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
         upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
+      displayName: Upload package
       env:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)
       condition: not(eq(variables['UPLOAD_PACKAGES'], 'False'))

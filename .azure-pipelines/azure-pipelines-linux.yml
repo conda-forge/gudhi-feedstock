@@ -22,6 +22,10 @@ jobs:
         CONFIG: linux_boost_version1.68.0python3.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      linux_boost_version1.68.0python3.8:
+        CONFIG: linux_boost_version1.68.0python3.8
+        UPLOAD_PACKAGES: True
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_boost_version1.69.0python2.7:
         CONFIG: linux_boost_version1.69.0python2.7
         UPLOAD_PACKAGES: True
@@ -32,6 +36,10 @@ jobs:
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
       linux_boost_version1.69.0python3.7:
         CONFIG: linux_boost_version1.69.0python3.7
+        UPLOAD_PACKAGES: True
+        DOCKER_IMAGE: condaforge/linux-anvil-comp7
+      linux_boost_version1.69.0python3.8:
+        CONFIG: linux_boost_version1.69.0python3.8
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
   steps:
@@ -46,7 +54,7 @@ jobs:
   - script: |
         export CI=azure
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-        .azure-pipelines/run_docker_build.sh
+        .scripts/run_docker_build.sh
     displayName: Run docker build
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
