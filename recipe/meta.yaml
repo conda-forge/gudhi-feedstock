@@ -1,6 +1,6 @@
-{% set version = "3.0.0" %}
-{% set commit = "de8e4aba94a0d5ecf933ad3ee1c05ccb866288b0" %}
-{% set sha256 = "0f8e081b1400b1f04cf0228d8915bb3e9cc5e913ececb7206e258cbfbda89a2f" %}
+{% set version = "3.1.0" %}
+{% set commit = "653b8ff129a9676d1bc69ee5231cf12f9aadd7e9" %}
+{% set sha256 = "34ab71df7666f0d88a70839d43928cc482bebe57d6e2ef262bb9df2f9561987c" %}
 
 package:
   name: gudhi
@@ -27,13 +27,13 @@ requirements:
     - cython
     - boost-cpp {{ boost_version }}
     - eigen
-    - cgal-cpp 4.14
+    - cgal-cpp 5.0
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp {{ boost_version }}
-    - cgal-cpp 4.14
+    - cgal-cpp 5.0
 
 test:
   commands:
