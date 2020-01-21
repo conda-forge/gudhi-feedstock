@@ -12,8 +12,8 @@ source:
 
 build:
   number: 0
-  # C++11 only supports vc14
-  skip: true  # [win and py2k]
+  # C++14 for windows only supports vc > 14 and no python 2.X
+  skip: true  # [win and vc<14 and py2k]
 
 requirements:
   build:
