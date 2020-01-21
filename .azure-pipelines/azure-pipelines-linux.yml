@@ -10,36 +10,36 @@ jobs:
   strategy:
     maxParallel: 8
     matrix:
-      linux_boost_version1.68.0python2.7:
-        CONFIG: linux_boost_version1.68.0python2.7
+      linux_boost_version1.70.0python2.7:
+        CONFIG: linux_boost_version1.70.0python2.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.68.0python3.6:
-        CONFIG: linux_boost_version1.68.0python3.6
+      linux_boost_version1.70.0python3.6:
+        CONFIG: linux_boost_version1.70.0python3.6
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.68.0python3.7:
-        CONFIG: linux_boost_version1.68.0python3.7
+      linux_boost_version1.70.0python3.7:
+        CONFIG: linux_boost_version1.70.0python3.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.68.0python3.8:
-        CONFIG: linux_boost_version1.68.0python3.8
+      linux_boost_version1.70.0python3.8:
+        CONFIG: linux_boost_version1.70.0python3.8
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.69.0python2.7:
-        CONFIG: linux_boost_version1.69.0python2.7
+      linux_boost_version1.71.0python2.7:
+        CONFIG: linux_boost_version1.71.0python2.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.69.0python3.6:
-        CONFIG: linux_boost_version1.69.0python3.6
+      linux_boost_version1.71.0python3.6:
+        CONFIG: linux_boost_version1.71.0python3.6
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.69.0python3.7:
-        CONFIG: linux_boost_version1.69.0python3.7
+      linux_boost_version1.71.0python3.7:
+        CONFIG: linux_boost_version1.71.0python3.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_boost_version1.69.0python3.8:
-        CONFIG: linux_boost_version1.69.0python3.8
+      linux_boost_version1.71.0python3.8:
+        CONFIG: linux_boost_version1.71.0python3.8
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
   steps:
