@@ -10,11 +10,15 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2015
+mpfr:
+- '4'
 numpy:
 - '1.14'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
+  mpfr:
+    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
