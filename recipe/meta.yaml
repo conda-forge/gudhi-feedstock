@@ -28,12 +28,14 @@ requirements:
     - boost-cpp {{ boost_version }}
     - eigen
     - cgal-cpp 5.0
+    - mpfr
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp {{ boost_version }}
     - cgal-cpp 5.0
+    - mpfr
 
 test:
   commands:
