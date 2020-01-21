@@ -29,6 +29,7 @@ requirements:
     - eigen
     - cgal-cpp 5.0
     - mpfr
+    - mpir
   run:
     - python
     - numpy
@@ -36,6 +37,7 @@ requirements:
     - boost-cpp {{ boost_version }}
     - cgal-cpp 5.0
     - mpfr
+    - mpir
 
 test:
   commands:
