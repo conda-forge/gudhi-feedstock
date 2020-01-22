@@ -1,8 +1,0 @@
-c_compiler:                    # [win]
-  - vs2017                     # [win]
-cxx_compiler:                  # [win]
-  - vs2017                     # [win]
-vc:                            # [win]
-  - 14.1                       # [win]
-boost_version:
-  - 1.70.0
