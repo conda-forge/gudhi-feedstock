@@ -15,11 +15,6 @@ build:
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
-c_compiler:                    # [win]
-  - vs2017                     # [win]
-cxx_compiler:                  # [win]
-  - vs2017                     # [win]
-
 requirements:
   build:
     - cmake
@@ -33,7 +28,6 @@ requirements:
     - boost-cpp 1.70.0
     - eigen
     - cgal-cpp 5.0
-    - vc 14.1 # [win]
   run:
     - python
     - numpy
