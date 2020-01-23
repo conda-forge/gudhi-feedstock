@@ -32,7 +32,7 @@ requirements:
     - python
     - numpy
     - setuptools
-    - boost-cpp {{ boost_version }}
+    - boost-cpp 1.70.0
     - cgal-cpp 5.0
 
 test:
