@@ -47,7 +47,7 @@ cmake -LAH -G"NMake Makefiles" ^
   -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
   -DPython_ADDITIONAL_VERSIONS=${PY_VER} ^
   -DPYTHON_EXECUTABLE="%PYTHON%" ^
-  -DWITH_GUDHI_PYTHON=ON .
+  -DWITH_GUDHI_PYTHON=ON ..
 if errorlevel 1 exit 1
 
 cd python
