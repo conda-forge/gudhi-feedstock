@@ -1,17 +1,17 @@
-set CMAKE_CONFIG="Release"
+set CMAKE_CONFIG=Release
+set CMAKE_GENERATOR=NMake Makefiles
 
 :: Construct user version from devel version
 
 mkdir build && cd build
 
-cmake -LAH -G"NMake Makefiles" ^
+echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
-  -DUSER_VERSION_DIR=version ^
-  ..
-if errorlevel 1 exit 1
+  -DUSER_VERSION_DIR=version ..
+cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DUSER_VERSION_DIR=version .. || goto :eof
 
-cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
-if errorlevel 1 exit 1
+echo cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
+cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION || goto :eof
 
 cd version
 
@@ -19,23 +19,37 @@ cd version
 
 mkdir build && cd build
 
-cmake -LAH -G"NMake Makefiles" ^
+:: Lines to be removed :
+::  -DWITH_GUDHI_TEST=OFF ^
+::  -DWITH_GUDHI_UTILITIES=OFF ^
+
+echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
   -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
   -DPython_ADDITIONAL_VERSIONS=${PY_VER} ^
   -DPYTHON_EXECUTABLE="%PYTHON%" ^
   -DWITH_GUDHI_PYTHON=OFF ^
+  -DWITH_GUDHI_TEST=OFF ^
+  -DWITH_GUDHI_UTILITIES=OFF ^
   ..
-if errorlevel 1 exit 1
+cmake -LAH -G"%CMAKE_GENERATOR%" ^
+  -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
+  -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+  -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
+  -DPython_ADDITIONAL_VERSIONS=${PY_VER} ^
+  -DPYTHON_EXECUTABLE="%PYTHON%" ^
+  -DWITH_GUDHI_PYTHON=OFF ^
+  -DWITH_GUDHI_TEST=OFF ^
+  -DWITH_GUDHI_UTILITIES=OFF ^
+  .. || goto :eof
 
-cmake --build . --config %CMAKE_CONFIG% --target INSTALL
-if errorlevel 1 exit 1
+echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
+cmake --build . --config %CMAKE_CONFIG% --target INSTALL || goto :eof
 
-cmake -DWITH_GUDHI_PYTHON=ON .
-if errorlevel 1 exit 1
+echo cmake -DWITH_GUDHI_PYTHON=ON .
+cmake -DWITH_GUDHI_PYTHON=ON . || goto :eof
 
 cd python
+echo python setup.py install
 python setup.py install
-if errorlevel 1 exit 1
-

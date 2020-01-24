@@ -1,6 +1,6 @@
-{% set version = "3.0.0" %}
-{% set commit = "de8e4aba94a0d5ecf933ad3ee1c05ccb866288b0" %}
-{% set sha256 = "0f8e081b1400b1f04cf0228d8915bb3e9cc5e913ececb7206e258cbfbda89a2f" %}
+{% set version = "3.1.0" %}
+{% set commit = "653b8ff129a9676d1bc69ee5231cf12f9aadd7e9" %}
+{% set sha256 = "9d5a55c467253b19f7facdd6e1b3ca31ab7371bdc573b715e5e54033d668526a" %}
 
 package:
   name: gudhi
@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  # C++11 only supports vc14
+  # for windows, no python 2.X
   skip: true  # [win and py2k]
 
 requirements:
@@ -25,15 +25,15 @@ requirements:
     - numpy
     - setuptools
     - cython
-    - boost-cpp {{ boost_version }}
+    - boost-cpp 1.70.0
     - eigen
-    - cgal-cpp 4.14
+    - cgal-cpp 5.0
   run:
     - python
     - numpy
     - setuptools
-    - boost-cpp {{ boost_version }}
-    - cgal-cpp 4.14
+    - boost-cpp 1.70.0
+    - cgal-cpp 5.0
 
 test:
   commands:
