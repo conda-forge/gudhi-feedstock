@@ -26,14 +26,14 @@ requirements:
     - numpy
     - setuptools
     - cython
-    - boost-cpp 1.70.0
+    - boost-cpp
     - eigen
     - cgal-cpp 5.0
   run:
     - python
     - numpy
     - setuptools
-    - boost-cpp 1.70.0
+    - boost-cpp
     - cgal-cpp 5.0
 
 test:
