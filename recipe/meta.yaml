@@ -1,7 +1,7 @@
-{% set version = "3.1.1" %}
+{% set version = "3.2.0.rc1" %}
 
-{% set commit = "cbe3d0d2b16e19048928ae308851c4312cca42c8" %}
-{% set sha256 = "e0eb25b24d5f608c045a3df4cc8c6ba845d0f62f77de0868c5c35766548ebd88" %}
+{% set commit = "db10582cb0f8fecba654153d248142489ab6b883" %}
+{% set sha256 = "a8225900d33e50f3495038b131c6afef36468dcdb38a6bc922344b67c21402ac" %}
 
 package:
   name: gudhi
@@ -26,15 +26,16 @@ requirements:
     - numpy
     - setuptools
     - cython
+    - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.0
+    - cgal-cpp 5.0.1
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.0
+    - cgal-cpp 5.0.1
 
 test:
   commands:
@@ -46,7 +47,7 @@ test:
 about:
   home: http://gudhi.gforge.inria.fr/
   license: MIT/GPL3
-  license_file: LICENSE
+  license_file: LICENSEpybind/python_example/blob/master/conda.recipe/meta.yaml
   summary: Geometry Understanding in Higher Dimensions
   description: |
     The GUDHI library is a generic open source C++ library, with a Python
