@@ -54,10 +54,10 @@ test:
     - if not exist %LIBRARY_INC%\gudhi\Simplex_tree.h exit 1  # [win]
     - conda inspect linkages $PKG_NAME  # [not win]
     - conda inspect objects $PKG_NAME  # [osx]
-    - py.test src/python/test -k "not test_dtm and not test_knn and not test_wasserstein_distance_grad"
+    - find src/python/test/*.py ! -name test_knn.py ! -name test_dtm.py  -exec pytest -k "not test_wasserstein_distance_grad" {} \;  # [not win]
 about:
   home: http://gudhi.gforge.inria.fr/
-  license: MIT/GPL3
+  license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later
   license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
   description: |
