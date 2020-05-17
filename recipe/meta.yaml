@@ -48,10 +48,6 @@ test:
     - scikit-learn
     - POT
     - tensorflow
-    - torch
-    - pykeops
-    - hnswlib
-    - eagerpy
   source_files:
     - src/python/test
   commands:
@@ -59,7 +55,7 @@ test:
     - if not exist %LIBRARY_INC%\gudhi\Simplex_tree.h exit 1  # [win]
     - conda inspect linkages $PKG_NAME  # [not win]
     - conda inspect objects $PKG_NAME  # [osx]
-    - py.test
+    - py.test src/python/test -k "not test_dtm and not test_knn and not test_wasserstein_distance_grad"
 about:
   home: http://gudhi.gforge.inria.fr/
   license: MIT/GPL3
