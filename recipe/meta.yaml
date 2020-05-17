@@ -47,7 +47,6 @@ test:
     - scipy
     - scikit-learn
     - POT
-    - tensorflow
   source_files:
     - src/python/test
   commands:
