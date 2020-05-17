@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Download submodule
+git submodule update --init
+
 # Construct user version from devel version
 mkdir build && cd build
 

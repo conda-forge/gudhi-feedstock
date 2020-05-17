@@ -1,13 +1,14 @@
 set CMAKE_CONFIG=Release
 set CMAKE_GENERATOR=NMake Makefiles
 
+:: Download submodule
+git submodule update --init
+
 :: Construct user version from devel version
 
 mkdir build && cd build
 
-echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
-  -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
-  -DUSER_VERSION_DIR=version ..
+echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DUSER_VERSION_DIR=version ..
 cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DUSER_VERSION_DIR=version .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
