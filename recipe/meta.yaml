@@ -49,7 +49,7 @@ test:
 about:
   home: http://gudhi.gforge.inria.fr/
   license: MIT/GPL3
-  license_file: LICENSEpybind/python_example/blob/master/conda.recipe/meta.yaml
+  license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
   description: |
     The GUDHI library is a generic open source C++ library, with a Python
