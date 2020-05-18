@@ -43,10 +43,6 @@ test:
   requires:
     - pytest
     - python
-    - matplotlib
-    - scipy
-    - scikit-learn
-    - POT
   source_files:
     - src/python/test
   commands:
@@ -54,7 +50,18 @@ test:
     - if not exist %LIBRARY_INC%\gudhi\Simplex_tree.h exit 1  # [win]
     - conda inspect linkages $PKG_NAME  # [not win]
     - conda inspect objects $PKG_NAME  # [osx]
-    - find src/python/test/*.py ! -name test_knn.py ! -name test_dtm.py  -exec pytest -k "not test_wasserstein_distance_grad" {} \;  # [not win]
+    - pytest src/python/test/test_alpha_complex.py
+    - pytest src/python/test/test_bottleneck_distance.py
+    - pytest src/python/test/test_cubical_complex.py
+    - pytest src/python/test/test_euclidean_witness_complex.py
+    - pytest src/python/test/test_reader_utils.py
+    - pytest src/python/test/test_rips_complex.py
+    - pytest src/python/test/test_simplex_generators.py
+    - pytest src/python/test/test_simplex_tree.py
+    - pytest src/python/test/test_subsampling.py
+    - pytest src/python/test/test_tangential_complex.py
+    - pytest src/python/test/test_time_delay.py
+    - pytest src/python/test/test_witness_complex.py
 about:
   home: http://gudhi.gforge.inria.fr/
   license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later
