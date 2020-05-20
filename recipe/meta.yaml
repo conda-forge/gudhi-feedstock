@@ -1,18 +1,16 @@
-{% set version = "3.1.1" %}
-
-{% set commit = "cbe3d0d2b16e19048928ae308851c4312cca42c8" %}
-{% set sha256 = "e0eb25b24d5f608c045a3df4cc8c6ba845d0f62f77de0868c5c35766548ebd88" %}
+{% set version = "3.2.0" %}
 
 package:
   name: gudhi
   version: {{ version }}
 
 source:
-  url: https://github.com/GUDHI/gudhi-devel/archive/{{ commit }}.tar.gz
-  sha256: {{ sha256 }}
+  git_url: https://github.com/GUDHI/gudhi-devel.git
+  git_rev: tags/gudhi-release-{{ version }}
+  git_depth: 1
 
 build:
-  number: 2
+  number: 0
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -22,30 +20,48 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - git
     - python
     - numpy
     - setuptools
     - cython
+    - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.0
+    - cgal-cpp 5.0.1
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.0
+    - cgal-cpp 5.0.1
 
 test:
+  requires:
+    - pytest
+    - python
+  source_files:
+    - src/python/test
   commands:
     - test -f ${PREFIX}/include/gudhi/Simplex_tree.h  # [unix]
     - if not exist %LIBRARY_INC%\gudhi\Simplex_tree.h exit 1  # [win]
     - conda inspect linkages $PKG_NAME  # [not win]
     - conda inspect objects $PKG_NAME  # [osx]
-    - python -c "import gudhi; diag1 = [[2.7, 3.7], [9.6, 14.0], [34.2, 34.974], [3.0, float('Inf')]]; diag2 = [[2.8, 4.45], [9.5, 14.1], [3.2, float('Inf')]]; assert gudhi.bottleneck_distance(diag1, diag2) == 0.75"
+    - pytest src/python/test/test_alpha_complex.py
+    - pytest src/python/test/test_bottleneck_distance.py
+    - pytest src/python/test/test_cubical_complex.py
+    - pytest src/python/test/test_euclidean_witness_complex.py
+    - pytest src/python/test/test_reader_utils.py
+    - pytest src/python/test/test_rips_complex.py
+    - pytest src/python/test/test_simplex_generators.py
+    - pytest src/python/test/test_simplex_tree.py
+    - pytest src/python/test/test_subsampling.py
+    - pytest src/python/test/test_tangential_complex.py
+    - pytest src/python/test/test_time_delay.py
+    - pytest src/python/test/test_witness_complex.py
 about:
   home: http://gudhi.gforge.inria.fr/
-  license: MIT/GPL3
+  license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later
   license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
   description: |
