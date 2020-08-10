@@ -28,13 +28,13 @@ requirements:
     - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.0.2
+    - cgal-cpp 5.0.2.*
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.0.1
+    - cgal-cpp 5.0.2.*
 
 test:
   requires:
