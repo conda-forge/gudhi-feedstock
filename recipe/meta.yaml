@@ -10,7 +10,7 @@ source:
   git_depth: 1
 
 build:
-  number: 0
+  number: 1
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -34,7 +34,7 @@ requirements:
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.0.2.*
+    - cgal-cpp 5.0.3.*
 
 test:
   requires:
