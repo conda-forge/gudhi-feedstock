@@ -11,7 +11,7 @@ source:
 #  git_depth: 1
 
 build:
-  number: 3
+  number: 4
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -46,8 +46,6 @@ test:
   commands:
     - test -f ${PREFIX}/include/gudhi/Simplex_tree.h  # [unix]
     - if not exist %LIBRARY_INC%\gudhi\Simplex_tree.h exit 1  # [win]
-    - conda inspect linkages $PKG_NAME  # [not win]
-    - conda inspect objects $PKG_NAME  # [osx]
     - pytest src/python/test/test_alpha_complex.py
     - pytest src/python/test/test_bottleneck_distance.py
     - pytest src/python/test/test_cubical_complex.py
