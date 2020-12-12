@@ -7,7 +7,8 @@ package:
 source:
   git_url: https://github.com/GUDHI/gudhi-devel.git
   git_rev: tags/gudhi-release-{{ version }}
-  git_depth: 1
+# faster when last commit is the version tag
+#  git_depth: 1
 
 build:
   number: 3
