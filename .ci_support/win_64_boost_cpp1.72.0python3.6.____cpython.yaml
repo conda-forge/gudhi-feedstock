@@ -1,7 +1,7 @@
 CMAKE_GENERATOR:
 - NMake Makefiles
 boost_cpp:
-- '1.72'
+- 1.72.0
 c_compiler:
 - vs2017
 channel_sources:
@@ -19,7 +19,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.6.* *_cpython
 target_platform:
 - win-64
 zip_keys:

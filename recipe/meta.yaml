@@ -7,10 +7,11 @@ package:
 source:
   git_url: https://github.com/GUDHI/gudhi-devel.git
   git_rev: tags/gudhi-release-{{ version }}
-  git_depth: 1
+# faster when last commit is the version tag
+#  git_depth: 1
 
 build:
-  number: 1
+  number: 3
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -28,13 +29,13 @@ requirements:
     - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.0.3.*
+    - cgal-cpp 5.1.1.*
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.0.3.*
+    - cgal-cpp 5.1.1.*
 
 test:
   requires:
