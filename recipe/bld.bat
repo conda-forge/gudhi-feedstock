@@ -20,10 +20,6 @@ cd version
 
 mkdir build && cd build
 
-:: Lines to be removed :
-::  -DWITH_GUDHI_TEST=OFF ^
-::  -DWITH_GUDHI_UTILITIES=OFF ^
-
 echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
   -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
@@ -33,7 +29,7 @@ echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DBoost_USE_STATIC_LIBS=OFF ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
-  -DWITH_GUDHI_UTILITIES=OFF ^
+  -DWITH_GUDHI_UTILITIES=ON ^
   ..
 cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
@@ -44,7 +40,7 @@ cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DBoost_USE_STATIC_LIBS=OFF ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
-  -DWITH_GUDHI_UTILITIES=OFF ^
+  -DWITH_GUDHI_UTILITIES=ON ^
   .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
