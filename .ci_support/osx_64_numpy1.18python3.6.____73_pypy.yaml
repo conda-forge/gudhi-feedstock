@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 boost_cpp:
-- 1.72.0
+- 1.74.0
 c_compiler:
 - clang
 c_compiler_version:
@@ -17,7 +17,7 @@ cxx_compiler_version:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
-- '1.16'
+- '1.18'
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
@@ -25,11 +25,11 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.7.* *_cpython
+- 3.6.* *_73_pypy
 target_platform:
 - osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - numpy
-  - python
+- - python
+  - numpy
