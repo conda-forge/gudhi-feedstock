@@ -1,4 +1,4 @@
-{% set version = "3.4.0" %}
+{% set version = "3.4.1" %}
 
 package:
   name: gudhi
@@ -29,13 +29,13 @@ requirements:
     - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.1.1.*
+    - cgal-cpp 5.2.*
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.1.1.*
+    - cgal-cpp 5.2.*
 
 test:
   requires:
