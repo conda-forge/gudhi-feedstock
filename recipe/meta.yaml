@@ -1,4 +1,4 @@
-{% set version = "3.4.1" %}
+{% set version = "3.5.0rc2" %}
 
 package:
   name: gudhi
@@ -11,7 +11,7 @@ source:
 #  git_depth: 1
 
 build:
-  number: 2
+  number: 1
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -29,13 +29,13 @@ requirements:
     - pybind11
     - boost-cpp
     - eigen
-    - cgal-cpp 5.2.*
+    - cgal-cpp 5.3.1
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.2.*
+    - cgal-cpp 5.3.1
 
 test:
   requires:
@@ -59,7 +59,7 @@ test:
     - pytest src/python/test/test_time_delay.py
     - pytest src/python/test/test_witness_complex.py
 about:
-  home: http://gudhi.gforge.inria.fr/
+  home: https://gudhi.inria.fr/
   license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later
   license_file: LICENSE
   summary: Geometry Understanding in Higher Dimensions
@@ -69,7 +69,7 @@ about:
     Geometry Understanding. The library offers state-of-the-art data structures
     and algorithms to construct simplicial complexes and compute persistent
     homology.
-  doc_url: http://gudhi.gforge.inria.fr/python/{{ version }}/
+  doc_url: https://gudhi.inria.fr/python/{{ version }}/
 extra:
   recipe-maintainers:
     - VincentRouvreau
