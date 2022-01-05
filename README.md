@@ -1,7 +1,7 @@
 About gudhi
 ===========
 
-Home: http://gudhi.gforge.inria.fr/
+Home: https://gudhi.inria.fr/
 
 Package license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-3.0-or-later
 
@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gudhi-feedstock
 
 Summary: Geometry Understanding in Higher Dimensions
 
-Documentation: http://gudhi.gforge.inria.fr/python/3.4.1/
+Documentation: https://gudhi.inria.fr/python/3.5.0rc2/
 
 The GUDHI library is a generic open source C++ library, with a Python
 interface, for Topological Data Analysis (TDA) and Higher Dimensional
