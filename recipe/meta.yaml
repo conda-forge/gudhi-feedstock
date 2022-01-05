@@ -11,7 +11,7 @@ source:
 #  git_depth: 1
 
 build:
-  number: 1
+  number: 0
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
@@ -20,6 +20,7 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make  # [unix]
   host:
     - git
     - python
