@@ -21,8 +21,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
-  host:
     - git
+  host:
     - python
     - numpy
     - setuptools
