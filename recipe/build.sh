@@ -18,7 +18,7 @@ cd version
 
 mkdir build && cd build
 
-cmake \
+cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_PREFIX_PATH=${PREFIX} \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
