@@ -21,16 +21,25 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
-    - git
+    - git  # [arm64]
+    - python  # [arm64]
+    - numpy  # [arm64]
+    - setuptools  # [arm64]
+    - cython  # [arm64]
+    - pybind11  # [arm64]
+    - boost-cpp  # [arm64]
+    - eigen  # [arm64]
+    - cgal-cpp 5.3.1  # [arm64]
   host:
-    - python
-    - numpy
-    - setuptools
-    - cython
-    - pybind11
-    - boost-cpp
-    - eigen
-    - cgal-cpp 5.3.1
+    - git  # [not arm64]
+    - python  # [not arm64]
+    - numpy  # [not arm64]
+    - setuptools  # [not arm64]
+    - cython  # [not arm64]
+    - pybind11  # [not arm64]
+    - boost-cpp  # [not arm64]
+    - eigen  # [not arm64]
+    - cgal-cpp 5.3.1  # [not arm64]
   run:
     - python
     - numpy
