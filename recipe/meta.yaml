@@ -20,32 +20,33 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make  # [unix]
-    - git  # [arm64]
-    - python  # [arm64]
-    - numpy  # [arm64]
-    - setuptools  # [arm64]
-    - cython  # [arm64]
-    - pybind11  # [arm64]
-    - boost-cpp  # [arm64]
-    - eigen  # [arm64]
-    - cgal-cpp 5.3.1  # [arm64]
+    - make  # [not win]
+    - git                                    # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - setuptools                             # [build_platform != target_platform]
+    - boost-cpp                              # [build_platform != target_platform]
+    - eigen                                  # [build_platform != target_platform]
+    - cgal-cpp 5.3.*                         # [build_platform != target_platform]
   host:
-    - git  # [not arm64]
-    - python  # [not arm64]
-    - numpy  # [not arm64]
-    - setuptools  # [not arm64]
-    - cython  # [not arm64]
-    - pybind11  # [not arm64]
-    - boost-cpp  # [not arm64]
-    - eigen  # [not arm64]
-    - cgal-cpp 5.3.1  # [not arm64]
+    - git
+    - python
+    - numpy
+    - setuptools
+    - cython
+    - pybind11
+    - boost-cpp
+    - eigen
+    - cgal-cpp 5.3.*
   run:
     - python
     - numpy
     - setuptools
     - boost-cpp
-    - cgal-cpp 5.3.1
+    - cgal-cpp 5.3.*
 
 test:
   requires:
