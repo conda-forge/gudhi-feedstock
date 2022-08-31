@@ -7,6 +7,7 @@ git submodule update --init
 mkdir build && cd build
 
 cmake \
+  -DWITH_GUDHI_THIRD_PARTY=OFF \
   -DUSER_VERSION_DIR=version \
   ..
 

@@ -8,8 +8,8 @@ git submodule update --init
 
 mkdir build && cd build
 
-echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DUSER_VERSION_DIR=version ..
-cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DUSER_VERSION_DIR=version .. || goto :eof
+echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DWITH_GUDHI_THIRD_PARTY=OFF -DUSER_VERSION_DIR=version ..
+cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DWITH_GUDHI_THIRD_PARTY=OFF -DUSER_VERSION_DIR=version .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
 cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION || goto :eof

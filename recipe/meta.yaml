@@ -11,41 +11,34 @@ source:
 #  git_depth: 1
 
 build:
-  number: 0
+  number: 1
   # for windows, no python 2.X
   skip: true  # [win and py2k]
 
 requirements:
   build:
-    - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - cmake
     - make  # [not win]
-    - git                                    # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
-    - setuptools                             # [build_platform != target_platform]
-    - boost-cpp                              # [build_platform != target_platform]
-    - eigen                                  # [build_platform != target_platform]
-    - cgal-cpp 5.4.*                         # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - git                                    # [build_platform != target_platform]
   host:
-    - git
     - python
-    - numpy
     - setuptools
     - cython
     - pybind11
+    - numpy
     - boost-cpp
     - eigen
     - cgal-cpp 5.4.*
   run:
     - python
-    - numpy
-    - setuptools
-    - boost-cpp
+    - {{ pin_compatible('numpy') }}
     - cgal-cpp 5.4.*
 
 test:
