@@ -50,5 +50,6 @@ echo cmake -DWITH_GUDHI_PYTHON=ON .
 cmake -DWITH_GUDHI_PYTHON=ON . || goto :eof
 
 cd python
-echo python setup.py install
-python setup.py install
+echo python setup.py build and install
+%PYTHON% setup.py build_ext -j%CPU_COUNT%
+%PYTHON% -m pip install . -vv
