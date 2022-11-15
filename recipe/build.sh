@@ -34,4 +34,5 @@ make install -j${CPU_COUNT}
 # install the python package
 cmake -DWITH_GUDHI_PYTHON=ON .
 cd python
-$PYTHON setup.py install
+$PYTHON setup.py build_ext -j${CPU_COUNT}
+$PYTHON -m pip install . -vv
