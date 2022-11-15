@@ -25,6 +25,7 @@ requirements:
     - git                                    # [build_platform != target_platform]
   host:
     - python
+    - pip
     - setuptools
     - cython
     - pybind11
