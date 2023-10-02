@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -30,7 +30,7 @@ requirements:
     - cython
     - pybind11
     - numpy
-    - boost-cpp
+    - libboost-headers
     - eigen
     - cgal-cpp >=5.5
   run:
