@@ -1,7 +1,3 @@
-CMAKE_GENERATOR:
-- NMake Makefiles
-boost_cpp:
-- 1.78.0
 c_compiler:
 - vs2017
 channel_sources:
@@ -11,10 +7,8 @@ channel_targets:
 cxx_compiler:
 - vs2017
 numpy:
-- '1.21'
+- '1.22'
 pin_run_as_build:
-  boost-cpp:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
