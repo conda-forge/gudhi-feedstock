@@ -1,25 +1,23 @@
-CMAKE_GENERATOR:
-- NMake Makefiles
-boost_cpp:
-- 1.78.0
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
+libboost_devel:
+- '1.82'
+mpfr:
+- '4'
 numpy:
-- '1.21'
+- '1.22'
 pin_run_as_build:
-  boost-cpp:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.10.* *_cpython
 target_platform:
 - win-64
 zip_keys:

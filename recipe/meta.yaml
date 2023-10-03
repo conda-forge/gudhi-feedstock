@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -19,7 +19,7 @@ requirements:
     - make  # [not win]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
+    - cython <3                              # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - git                                    # [build_platform != target_platform]
@@ -27,16 +27,19 @@ requirements:
     - python
     - pip
     - setuptools
-    - cython
+    - cython <3
     - pybind11
     - numpy
-    - boost-cpp
+    - libboost-devel
     - eigen
     - cgal-cpp >=5.5
+    - gmp   # [unix]
+    - mpfr
+    - mpir  # [win]
+    - ucrt  # [win]
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - cgal-cpp >=5.5
 
 test:
   requires:
