@@ -40,7 +40,6 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - cgal-cpp >=5.5
 
 test:
   requires:
