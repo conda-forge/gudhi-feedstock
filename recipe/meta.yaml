@@ -30,9 +30,13 @@ requirements:
     - cython <3
     - pybind11
     - numpy
-    - libboost-headers
+    - libboost-devel
     - eigen
     - cgal-cpp >=5.5
+    - gmp   # [unix]
+    - mpfr
+    - mpir  # [win]
+    - ucrt  # [win]
   run:
     - python
     - {{ pin_compatible('numpy') }}
