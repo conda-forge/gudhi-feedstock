@@ -9,7 +9,7 @@ Package license: MIT AND BSD-3-Clause AND MPL-2.0 AND LGPL-3.0-or-later AND GPL-
 
 Summary: Geometry Understanding in Higher Dimensions
 
-Documentation: https://gudhi.inria.fr/python/3.8.0/
+Documentation: https://gudhi.inria.fr/python/3.9.0rc1/
 
 The GUDHI library is a generic open source C++ library, with a Python
 interface, for Topological Data Analysis (TDA) and Higher Dimensional
@@ -319,7 +319,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
