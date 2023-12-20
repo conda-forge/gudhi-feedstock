@@ -1,4 +1,4 @@
-{% set version = "3.8.0" %}
+{% set version = "3.9.0rc1" %}
 
 package:
   name: gudhi
@@ -32,7 +32,7 @@ requirements:
     - numpy
     - libboost-devel
     - eigen
-    - cgal-cpp >=5.5
+    - cgal-cpp >=5.6
     - gmp   # [unix]
     - mpfr
     - mpir  # [win]
