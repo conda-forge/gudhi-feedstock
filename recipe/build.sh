@@ -26,6 +26,8 @@ cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DPython_ADDITIONAL_VERSIONS="${PY_VER}" \
   -DPYTHON_EXECUTABLE="$PYTHON" \
   -DWITH_GUDHI_PYTHON=OFF \
+  -DCMAKE_CXX_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" \
+  -DCMAKE_C_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" \
   ..
 
 # install include files and utils
@@ -34,5 +36,5 @@ make install -j${CPU_COUNT}
 # install the python package
 cmake -DWITH_GUDHI_PYTHON=ON .
 cd python
-$PYTHON setup.py build_ext -j${CPU_COUNT}
+CXXFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" CFLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" $PYTHON setup.py build_ext -j${CPU_COUNT}
 $PYTHON -m pip install . -vv
