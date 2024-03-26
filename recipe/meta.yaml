@@ -9,11 +9,12 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make  # [not win]
