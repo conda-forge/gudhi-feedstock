@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 6
+  number: 7
 
 requirements:
   build:
@@ -40,7 +40,6 @@ requirements:
     - ucrt  # [win]
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   requires:
