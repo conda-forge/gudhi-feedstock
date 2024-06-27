@@ -1,4 +1,4 @@
-{% set version = "3.9.0" %}
+{% set version = "3.10.0" %}
 
 package:
   name: gudhi
@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 6
+  number: 3
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - make  # [not win]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython <3                              # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - git                                    # [build_platform != target_platform]
@@ -28,7 +28,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - cython <3
+    - cython
     - pybind11
     - numpy
     - libboost-devel
