@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -34,9 +34,7 @@ requirements:
     - libboost-devel
     - eigen
     - cgal-cpp >=5.6
-    - gmp   # [unix]
     - mpfr
-    - mpir  # [win]
     - ucrt  # [win]
   run:
     - python
