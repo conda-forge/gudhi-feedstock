@@ -8,6 +8,9 @@ git submodule update --init
 
 mkdir build && cd build
 
+echo %CL%
+CL=/Zm50
+
 echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version ..
 cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version .. || goto :eof
 
