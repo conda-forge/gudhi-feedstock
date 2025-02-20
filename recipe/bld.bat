@@ -8,8 +8,8 @@ git submodule update --init
 
 mkdir build && cd build
 
-echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DWITH_GUDHI_THIRD_PARTY=OFF -DUSER_VERSION_DIR=version ..
-cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DBoost_USE_STATIC_LIBS=OFF -DWITH_GUDHI_THIRD_PARTY=OFF -DUSER_VERSION_DIR=version .. || goto :eof
+echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version ..
+cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION
 cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION || goto :eof
@@ -24,34 +24,30 @@ echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
   -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
-  -DPython_EXECUTABLE="%PYTHON%" ^
   -DBoost_USE_STATIC_LIBS=OFF ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
   -DWITH_GUDHI_UTILITIES=ON ^
-  -DFORCE_EIGEN_DEFAULT_DENSE_INDEX_TYPE_TO_INT=ON ^
   ..
 cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
   -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
   -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
-  -DPython_EXECUTABLE="%PYTHON%" ^
   -DBoost_USE_STATIC_LIBS=OFF ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
   -DWITH_GUDHI_UTILITIES=ON ^
-  -DFORCE_EIGEN_DEFAULT_DENSE_INDEX_TYPE_TO_INT=ON ^
   .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
 cmake --build . --config %CMAKE_CONFIG% --target INSTALL || goto :eof
 
-echo cmake -DWITH_GUDHI_PYTHON=ON .
-cmake -DWITH_GUDHI_PYTHON=ON . || goto :eof
+echo cmake -DPython_EXECUTABLE="%PYTHON%" -DWITH_GUDHI_PYTHON=ON .
+cmake -DPython_EXECUTABLE="%PYTHON%" -DWITH_GUDHI_PYTHON=ON . || goto :eof
 
 cd python
-echo %cd%
 echo python setup.py build and install
-dir
-%PYTHON% setup.py build_ext -j%CPU_COUNT%
-%PYTHON% -m pip install . -vv
+echo %PYTHON% setup.py build_ext -j %CPU_COUNT%
+%PYTHON% setup.py build_ext -j %CPU_COUNT% || goto :eof
+echo %PYTHON% -m pip install . -vv
+%PYTHON% -m pip install . -vv || goto :eof
