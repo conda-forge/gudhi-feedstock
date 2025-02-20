@@ -47,7 +47,7 @@ cmake -DPython_EXECUTABLE="%PYTHON%" -DWITH_GUDHI_PYTHON=ON . || goto :eof
 
 cd python
 echo python setup.py build and install
-echo %PYTHON% setup.py build_ext -j %CPU_COUNT%
-%PYTHON% setup.py build_ext -j %CPU_COUNT%
+echo %PYTHON% setup.py build_ext
+%PYTHON% setup.py build_ext
 echo %PYTHON% -m pip install . -vv
 %PYTHON% -m pip install . -vv
