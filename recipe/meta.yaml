@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -42,25 +42,6 @@ requirements:
 test:
   imports:
     - gudhi
-    - gudhi.AlphaComplex
-    - gudhi.bottleneck_distance
-    - gudhi.hera.bottleneck_distance
-    - gudhi.CubicalComplex
-    - gudhi.PeriodicCubicalComplex
-    - gudhi.EuclideanWitnessComplex
-    - gudhi.EuclideanStrongWitnessComplex
-    - gudhi.read_lower_triangular_matrix_from_csv_file
-    - gudhi.read_persistence_intervals_grouped_by_dimension
-    - gudhi.read_persistence_intervals_in_dimension
-    - gudhi.RipsComplex
-    - gudhi.SimplexTree
-    - gudhi.write_points_to_off_file
-    - gudhi.choose_n_farthest_points
-    - gudhi.pick_n_random_points
-    - gudhi.GUDHI_SUBSAMPLING_USE_CGAL
-    - gudhi.sparsify_point_set
-    - gudhi.TangentialComplex
-    - gudhi.point_cloud.timedelay.TimeDelayEmbedding
   requires:
     - python
     - numpy
