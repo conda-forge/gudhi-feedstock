@@ -29,6 +29,7 @@ echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
   -DWITH_GUDHI_UTILITIES=ON ^
+  -DFORCE_EIGEN_DEFAULT_DENSE_INDEX_TYPE_TO_INT=ON ^
   ..
 cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
@@ -39,6 +40,7 @@ cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DWITH_GUDHI_PYTHON=OFF ^
   -DWITH_GUDHI_TEST=OFF ^
   -DWITH_GUDHI_UTILITIES=ON ^
+  -DFORCE_EIGEN_DEFAULT_DENSE_INDEX_TYPE_TO_INT=ON ^
   .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
@@ -51,5 +53,5 @@ cd python
 echo %cd%
 echo python setup.py build and install
 dir
-%PYTHON% setup.py build_ext
+%PYTHON% setup.py build_ext -j%CPU_COUNT%
 %PYTHON% -m pip install . -vv
