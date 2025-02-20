@@ -51,5 +51,5 @@ cd python
 echo %cd%
 echo python setup.py build and install
 dir
-%PYTHON% setup.py build_ext -j%CPU_COUNT%
+%PYTHON% setup.py build_ext
 %PYTHON% -m pip install . -vv
