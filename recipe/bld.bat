@@ -7,8 +7,6 @@ git submodule update --init
 :: Construct user version from devel version
 
 mkdir build && cd build
-set CL=/Zm500
-
 echo cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version ..
 cmake -LAH -G"%CMAKE_GENERATOR%" -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" -DWITH_GUDHI_PYTHON=OFF -DUSER_VERSION_DIR=version .. || goto :eof
 
