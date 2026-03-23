@@ -18,8 +18,8 @@ cd version
 # Build and install user version
 
 # install the python package
-export SKBUILD_CMAKE_DEFINE="_LIBCPP_DISABLE_AVAILABILITY"
-$PYTHON -m pip install . -vv
+export SKBUILD_CMAKE_DEFINE="CMAKE_CXX_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY';CMAKE_C_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY'"
+$PYTHON -m pip install . --no-build-isolation --no-deps -v
 
 mkdir build && cd build
 
