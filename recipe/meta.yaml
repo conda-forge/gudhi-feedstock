@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
