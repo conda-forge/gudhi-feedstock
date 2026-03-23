@@ -34,5 +34,4 @@ make install -j${CPU_COUNT}
 
 # install the python package
 CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" CFLAGS="$CFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" cmake -DWITH_GUDHI_PYTHON=ON .
-cd python
 $PYTHON -m pip install . -vv
