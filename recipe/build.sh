@@ -21,7 +21,7 @@ cd version
 export SKBUILD_CMAKE_DEFINE="CMAKE_CXX_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY';CMAKE_C_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY'"
 $PYTHON -m pip install . --no-build-isolation --no-deps -v
 
-mkdir build && cd build
+mkdir release && cd release
 
 cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DCMAKE_BUILD_TYPE=Release \

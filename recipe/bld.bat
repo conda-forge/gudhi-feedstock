@@ -22,7 +22,7 @@ echo %PYTHON% -m pip install . --no-build-isolation --no-deps -v
 
 :: Build and install user version
 
-mkdir build && cd build
+mkdir release && cd release
 
 echo cmake -LAH -G"%CMAKE_GENERATOR%" ^
   -DCMAKE_BUILD_TYPE="%CMAKE_CONFIG%" ^
