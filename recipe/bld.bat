@@ -18,7 +18,7 @@ cd version
 :: Build Python package and install it
 
 echo %PYTHON% -m pip install . --no-build-isolation --no-deps -v
-%PYTHON% -m pip install . --no-build-isolation --no-deps -v || goto :eof
+%PYTHON% -m pip install . --no-build-isolation --no-deps -Ccmake.args="-G'%CMAKE_GENERATOR%'" -v || goto :eof
 
 :: Build and install user version
 
@@ -46,5 +46,4 @@ cmake -LAH -G"%CMAKE_GENERATOR%" ^
   .. || goto :eof
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
-cmake --build . --config %CMAKE_CONFIG% --target INSTALL || goto :eof
-cmake --install .
+cmake --build . --config %CMAKE_CONFIG% --target INSTALL
