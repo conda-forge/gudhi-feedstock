@@ -47,3 +47,4 @@ cmake -LAH -G"%CMAKE_GENERATOR%" ^
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
 cmake --build . --config %CMAKE_CONFIG% --target INSTALL || goto :eof
+cmake --install .

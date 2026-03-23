@@ -33,5 +33,5 @@ cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DCMAKE_C_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" \
   ..
 
-# install include files and utils
-make install -j${CPU_COUNT}
+cmake --build . -j${CPU_COUNT}
+cmake --install .
