@@ -1,5 +1,5 @@
 set CMAKE_CONFIG=Release
-set CMAKE_GENERATOR=NMake Makefiles
+set CMAKE_GENERATOR=Ninja
 
 :: Download submodule
 git submodule update --init
@@ -18,7 +18,7 @@ cd version
 :: Build Python package and install it
 
 echo %PYTHON% -m pip install . --no-build-isolation --no-deps -v
-%PYTHON% -m pip install . --no-build-isolation --no-deps -Ccmake.args="-G'%CMAKE_GENERATOR%'" -v || goto :eof
+%PYTHON% -m pip install . --no-build-isolation --no-deps -v || goto :eof
 
 :: Build and install user version
 
