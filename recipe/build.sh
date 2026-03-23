@@ -17,6 +17,10 @@ cd version
 
 # Build and install user version
 
+# install the python package
+export SKBUILD_CMAKE_DEFINE="_LIBCPP_DISABLE_AVAILABILITY"
+$PYTHON -m pip install . -vv
+
 mkdir build && cd build
 
 cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
@@ -31,7 +35,3 @@ cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
 
 # install include files and utils
 make install -j${CPU_COUNT}
-
-# install the python package
-CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" CFLAGS="$CFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" cmake -DWITH_GUDHI_PYTHON=ON .
-$PYTHON -m pip install . -vv

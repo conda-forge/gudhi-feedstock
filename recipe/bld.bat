@@ -15,6 +15,11 @@ cmake --build . --config %CMAKE_CONFIG% --target USER_VERSION || goto :eof
 
 cd version
 
+:: Build Python package and install it
+
+echo %PYTHON% -m pip install . -vv
+%PYTHON% -m pip install . -vv || goto :eof
+
 :: Build and install user version
 
 mkdir build && cd build
@@ -42,9 +47,3 @@ cmake -LAH -G"%CMAKE_GENERATOR%" ^
 
 echo cmake --build . --config %CMAKE_CONFIG% --target INSTALL
 cmake --build . --config %CMAKE_CONFIG% --target INSTALL || goto :eof
-
-echo cmake -DPython_EXECUTABLE="%PYTHON%" -DWITH_GUDHI_PYTHON=ON .
-cmake -DPython_EXECUTABLE="%PYTHON%" -DWITH_GUDHI_PYTHON=ON . || goto :eof
-
-echo %PYTHON% -m pip install . -vv
-%PYTHON% -m pip install . -vv
