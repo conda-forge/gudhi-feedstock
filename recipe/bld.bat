@@ -1,5 +1,5 @@
 set CMAKE_CONFIG=Release
-set CMAKE_GENERATOR=Ninja
+set CMAKE_GENERATOR=NMake Makefiles
 
 :: Download submodule
 git submodule update --init
