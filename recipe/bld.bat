@@ -18,7 +18,7 @@ cd version
 :: Build Python package and install it
 
 echo %PYTHON% -m pip install . --no-build-isolation --no-deps -v
-%PYTHON% -m pip install . --no-build-isolation --no-deps -v || goto :eof
+echo %PYTHON% -m pip install . --no-build-isolation --no-deps -v || goto :eof
 
 :: Build and install user version
 
