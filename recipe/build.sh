@@ -17,7 +17,11 @@ cd version
 
 # Build and install user version
 
-mkdir build && cd build
+# install the python package
+export SKBUILD_CMAKE_DEFINE="CMAKE_CXX_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY';CMAKE_C_FLAGS='-D_LIBCPP_DISABLE_AVAILABILITY'"
+$PYTHON -m pip install . --no-build-isolation --no-deps -v
+
+mkdir release && cd release
 
 cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DCMAKE_BUILD_TYPE=Release \
@@ -29,11 +33,5 @@ cmake ${CMAKE_ARGS} -LAH -G"$CMAKE_GENERATOR" \
   -DCMAKE_C_FLAGS="-D_LIBCPP_DISABLE_AVAILABILITY" \
   ..
 
-# install include files and utils
-make install -j${CPU_COUNT}
-
-# install the python package
-cmake -DWITH_GUDHI_PYTHON=ON .
-cd python
-CXXFLAGS="$CXXFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" CFLAGS="$CFLAGS -D_LIBCPP_DISABLE_AVAILABILITY" $PYTHON setup.py build_ext -j${CPU_COUNT}
-$PYTHON -m pip install . -vv
+cmake --build . -j${CPU_COUNT}
+cmake --install .
