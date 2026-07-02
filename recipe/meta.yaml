@@ -1,4 +1,4 @@
-{% set version = "3.13.0rc2" %}
+{% set version = "3.13.0" %}
 
 package:
   name: gudhi
@@ -9,7 +9,7 @@ source:
   git_rev: tags/gudhi-release-{{ version }}
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -54,6 +54,7 @@ test:
     - pytest src/python/test/test_alpha_complex.py
     - pytest src/python/test/test_bottleneck_distance.py
     - pytest src/python/test/test_cubical_complex.py
+    - pytest src/python/test/test_datasets_generators.py
     - pytest src/python/test/test_euclidean_witness_complex.py
     - pytest src/python/test/test_reader_utils.py
     - pytest src/python/test/test_rips_complex.py
